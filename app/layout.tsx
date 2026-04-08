@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/nav-bar";
 import Banner from "@/components/banner";
 import Footer from "@/components/footer";
+import WhatsappButton from "@/components/whatsapp-button";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -37,6 +38,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <WhatsappButton />
         </ThemeProvider>
       </body>
     </html>

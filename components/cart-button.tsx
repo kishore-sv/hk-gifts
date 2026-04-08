@@ -55,7 +55,7 @@ export default function CartButton() {
                                 </EmptyDescription>
                             </EmptyHeader>
                             <EmptyContent className="flex-row justify-center gap-2">
-                                <RainbowButton className="text-primary">Shop Now</RainbowButton>
+                                <RainbowButton className="dark:text-primary">Shop Now</RainbowButton>
                             </EmptyContent>
                         </Empty>
                     </DialogHeader>
