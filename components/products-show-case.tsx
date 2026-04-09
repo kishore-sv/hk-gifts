@@ -3,9 +3,10 @@ import Image from "next/image";
 import { Card, CardContent, CardDescription, CardTitle } from "./ui/card"
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Star, Plus } from "lucide-react";
+import { Star, Plus, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import CartButton from "./cart-button";
 interface Product {
     id: number;
     title: string;
@@ -15,7 +16,7 @@ interface Product {
     images: string[];
 }
 
-const PRODUCTS: Product[] = [
+export const PRODUCTS: Product[] = [
     {
         id: 1,
         title: "Birthday Currency Note Frame",
@@ -211,7 +212,7 @@ export default function ProductsShowCase() {
     )
 }
 
-function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product }: { product: Product }) {
     return (
         <Link href={`/products/${product.slug}`} className="relative">
             <div className="w-full h-full ">
@@ -231,7 +232,7 @@ function ProductCard({ product }: { product: Product }) {
                             <Ratings ratings={product.rating} />
                         </div>
                         <p> <span className="text-muted-foreground line-through">₹ {product.price + 99}</span><span className="text-lg font-bold ml-2">₹ {product.price}</span> </p>
-                        <Button size="sm" className="mt-2 cursor-pointer">Add To Cart</Button>
+                        <Button size="sm" className="mt-2 cursor-pointer"><Plus/> Add To Cart</Button>
                     </div>
                 </div>
             </div>
@@ -239,7 +240,7 @@ function ProductCard({ product }: { product: Product }) {
     )
 }
 
-function Ratings({ ratings }: { ratings: number }) {
+export function Ratings({ ratings }: { ratings: number }) {
     return (
         <div className="flex items-center gap-1">
             {Array.from({ length: 5 }).map((_, i) => {

@@ -25,9 +25,9 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-2">
-                <Link href="/best-sellers" className="flex items-center gap-2"><Button variant="link" className="cursor-pointer text-foreground hover:text-primary">Best Sellers</Button></Link>
-                <Link href="/all-products" className="flex items-center gap-2"><Button variant="link" className="cursor-pointer text-foreground hover:text-primary">All Products</Button></Link>
-                <Link href="/new-arrivals" className="flex items-center gap-2"><Button variant="link" className="cursor-pointer text-foreground hover:text-primary">New Arrivals</Button></Link>
+                <Link href="/collections/best-sellers" className="flex items-center gap-2"><Button variant="link" className="cursor-pointer text-foreground hover:text-primary">Best Sellers</Button></Link>
+                <Link href="/collections/all-products" className="flex items-center gap-2"><Button variant="link" className="cursor-pointer text-foreground hover:text-primary">All Products</Button></Link>
+                <Link href="/collections/new-arrivals" className="flex items-center gap-2"><Button variant="link" className="cursor-pointer text-foreground hover:text-primary">New Arrivals</Button></Link>
                 <Link href="/contact" className="flex items-center gap-2"><Button variant="link" className="cursor-pointer text-foreground hover:text-primary">Contact</Button></Link>
                 <SearchButton />
                 <CartButton />
