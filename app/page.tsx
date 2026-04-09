@@ -17,7 +17,11 @@ export default function Page() {
         </div>
       </div>
       <section className="mb-20 lg:mb-30">
-        <ProductsShowCase />
+        <ProductsShowCase title="Unique Gifts for Every Occasion" />
+      </section>
+
+      <section className="mb-20 lg:mb-30">
+        <ProductsShowCase title="Trending Gifts" />
       </section>
     </div>
   )
