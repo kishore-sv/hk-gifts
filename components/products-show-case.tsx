@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Star, Plus } from "lucide-react";
 import { useState } from "react";
+import { Button } from "./ui/button";
 interface Product {
     id: number;
     title: string;
@@ -230,6 +231,7 @@ function ProductCard({ product }: { product: Product }) {
                             <Ratings ratings={product.rating} />
                         </div>
                         <p> <span className="text-muted-foreground line-through">₹ {product.price + 99}</span><span className="text-lg font-bold ml-2">₹ {product.price}</span> </p>
+                        <Button size="sm" className="mt-2 cursor-pointer">Add To Cart</Button>
                     </div>
                 </div>
             </div>
