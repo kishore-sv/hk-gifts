@@ -15,6 +15,12 @@ function ThemeProvider({
       disableTransitionOnChange
       {...props}
     >
+      {/* <NextThemesProvider
+        attribute="class"
+        forcedTheme="light"
+        disableTransitionOnChange
+        {...props}
+      > */}
       <ThemeHotkey />
       {children}
     </NextThemesProvider>

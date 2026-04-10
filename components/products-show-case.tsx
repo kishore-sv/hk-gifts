@@ -224,73 +224,76 @@ export default function ProductsShowCase({ title }: { title: string }) {
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href={`/products/${product.slug}`} className="relative">
+    <div className="relative">
       <div className="h-full w-full">
         <div className="relative border p-4">
-          <div className="pointer-events-none absolute inset-0 z-10 h-full w-full">
-            <Plus
-              strokeWidth={1}
-              className="absolute -top-4 -left-4 size-8 text-muted-foreground"
-            />
-            <Plus
-              strokeWidth={1}
-              className="absolute -top-4 -right-4 size-8 text-muted-foreground"
-            />
-            <Plus
-              strokeWidth={1}
-              className="absolute -bottom-4 -left-4 size-8 text-muted-foreground"
-            />
-            <Plus
-              strokeWidth={1}
-              className="absolute -right-4 -bottom-4 size-8 text-muted-foreground"
-            />
-          </div>
-          <div className="overflow-hidden rounded-sm transition-transform duration-300 ease-in-out">
-            <img
-              draggable={false}
-              className="aspect-square h-auto w-full object-cover transition-transform duration-300 ease-in-out select-none hover:scale-105"
-              src={product.images[0]}
-              alt={product.title}
-              width={500}
-              height={500}
-            />
-          </div>
-          <div className="relative z-20 mt-2">
-            <h2>{product.title}</h2>
-            <div>
-              <Ratings ratings={product.rating} />
+          <Link href={`/products/${product.slug}`}>
+            <div className="pointer-events-none absolute inset-0 z-10 h-full w-full">
+              <Plus
+                strokeWidth={1}
+                className="absolute -top-4 -left-4 size-8 text-muted-foreground"
+              />
+              <Plus
+                strokeWidth={1}
+                className="absolute -top-4 -right-4 size-8 text-muted-foreground"
+              />
+              <Plus
+                strokeWidth={1}
+                className="absolute -bottom-4 -left-4 size-8 text-muted-foreground"
+              />
+              <Plus
+                strokeWidth={1}
+                className="absolute -right-4 -bottom-4 size-8 text-muted-foreground"
+              />
             </div>
-            <p>
-              {" "}
-              <span className="text-muted-foreground line-through">
-                ₹ {product.price + 99}
-              </span>
-              <span className="ml-2 text-lg font-bold">
-                ₹ {product.price}
-              </span>{" "}
-            </p>
-            <div className="flex items-center gap-3">
-              <Button size="sm" className="mt-2 cursor-pointer">
-                Order Now
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="mt-2 cursor-pointer"
-              >
-                <Plus /> Add To Cart
-              </Button>
+            <div className="overflow-hidden rounded-sm transition-transform duration-300 ease-in-out">
+              <img
+                draggable={false}
+                className="aspect-square h-auto w-full object-cover transition-transform duration-300 ease-in-out select-none hover:scale-105"
+                src={product.images[0]}
+                alt={product.title}
+                width={500}
+                height={500}
+              />
             </div>
+            <div className="relative z-20 mt-2">
+              <h2>{product.title}</h2>
+              <div>
+                <Ratings ratings={product.rating} />
+              </div>
+              <p>
+                {" "}
+                <span className="text-muted-foreground line-through">
+                  ₹ {product.price + 99}
+                </span>
+                <span className="ml-2 text-lg font-bold">
+                  ₹ {product.price}
+                </span>{" "}
+              </p>
+            </div>
+          </Link>
+          <div className="flex items-center gap-3">
+            <Button size="sm" className="mt-2 cursor-pointer">
+              Order Now
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="mt-2 cursor-pointer"
+            >
+              <Plus /> Add To Cart
+            </Button>
           </div>
+
         </div>
       </div>
-    </Link>
+    </div >
   )
 }
 
-export function Ratings({ ratings }: { ratings: number }) {
+export function Ratings({ className, ratings }: { className?: string, ratings: number }) {
   return (
-    <div className="flex items-center gap-1">
+    <div className={cn(className, "flex items-center gap-1")}>
       {Array.from({ length: 5 }).map((_, i) => {
         const fillPercentage = Math.min(Math.max(ratings - i, 0), 1) * 100
         return (
@@ -298,7 +301,7 @@ export function Ratings({ ratings }: { ratings: number }) {
             <Star className="absolute top-0 left-0 size-4 text-muted-foreground" />
             <Star
               className="absolute top-0 left-0 size-4 fill-yellow-500 text-yellow-500"
-              style={{ clipPath: `inset(0 ${100 - fillPercentage}% 0 0)` }}
+              style={{ clipPath: `inset(0 ${100 - fillPercentage} % 0 0)` }}
             />
           </div>
         )

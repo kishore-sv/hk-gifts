@@ -15,11 +15,11 @@ import {
 
 export default function Navbar() {
     return (
-        <nav className="w-full sticky top-0 z-9999 px-4 md:px-8 lg:px-40 flex items-center justify-between h-18 bg-background/50 border-b backdrop-blur-md">
+        <nav className="w-full sticky top-0 z-999 px-4 md:px-8 lg:px-40 flex items-center justify-between h-18 bg-background/50 border-b backdrop-blur-md">
             <div className="flex items-center gap-2">
-                <Link href="/" className="flex items-center gap-2 group hover:text-primary transition-all hover:underline underline-offset-4 ease-in-out">
-                    <Logo className="w-6 h-6 group-hover:text-primary" />
-                    <span className="font-semibold">HK Gifts</span>
+                <Link href="/" className="flex items-center gap-2 group hover:text-brand-primary transition-all hover:underline underline-offset-4 ease-in-out">
+                    <Logo type="png" className="size-14 rounded-md p-px border group-hover:text-brand-primary" />
+                    <span className="font-semibold">HM Surprizo</span>
                 </Link>
             </div>
 
@@ -44,7 +44,7 @@ export default function Navbar() {
                             <Menu className="w-5 h-5" />
                         </Button>
                     </SheetTrigger>
-                    <SheetContent side="right" className="flex flex-col gap-4 px-6">
+                    <SheetContent side="right" className="flex flex-col gap-4 px-6 z-9999">
                         <SheetHeader>
                             <SheetTitle className="text-left font-semibold">Menu</SheetTitle>
                         </SheetHeader>
@@ -54,7 +54,7 @@ export default function Navbar() {
                             <Link href="/new-arrivals" className="text-lg font-medium hover:text-primary transition-colors">New Arrivals</Link>
                             <Link href="/contact" className="text-lg font-medium hover:text-primary transition-colors">Contact</Link>
                         </div>
-                        <div className="mt-auto">
+                        <div className="mt-auto mb-5">
                             <RainbowButton variant="outline" className="w-full">Login</RainbowButton>
                         </div>
                     </SheetContent>

@@ -8,9 +8,14 @@ export default function Footer() {
         <footer className="w-full px-4 md:px-8 lg:px-40 py-10 bg-background/80 border-t backdrop-blur-md">
             <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 lg:gap-20">
                 <Link href="/" className="flex items-center gap-2 group hover:text-primary transition-all hover:underline underline-offset-4 ease-in-out">
-                    <Logo className="w-6 h-6 group-hover:text-primary" />
-                    <span className="font-semibold text-xl">HK Gifts</span>
+                    <Logo type="png" className="size-26 rounded-md border p-px group-hover:text-primary" />
+                    <div className="flex flex-col">
+                        <span className="font-semibold text-xl">HM Surprizo</span>
+                        <p className="text-sm text-muted-foreground">Creative Gift Packing Services</p>
+                    </div>
                 </Link>
+
+
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-20 text-center lg:text-left">
                     <div>
@@ -40,7 +45,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="text-primary">
-                <TextHoverEffect text="HK Gifts" />
+                <TextHoverEffect text="Surprizo" size="4xl" />
             </div>
         </footer>
     )
