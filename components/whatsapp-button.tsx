@@ -4,7 +4,7 @@ export default function WhatsappButton() {
     return (
         <div className="fixed bottom-10 left-10 z-50">
             <a href="https://wa.me/917760220979" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="cursor-pointer bg-green-500 hover:bg-green-600">
+                <Button size="lg" className="cursor-pointer bg-green-500 hover:bg-green-600" >
                     <WhatsAppIcon /> Order on WhatsApp
                 </Button>
             </a>

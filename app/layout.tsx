@@ -8,6 +8,9 @@ import Navbar from "@/components/nav-bar";
 import Banner from "@/components/banner";
 import Footer from "@/components/footer";
 import WhatsappButton from "@/components/whatsapp-button";
+import { CartProvider } from "@/hooks/use-cart";
+import { Toaster } from "sonner";
+import { AuthProvider } from "@/hooks/use-auth";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -33,13 +36,18 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, "selection:bg-primary selection:text-primary-foreground")}
     >
       <body>
-        <ThemeProvider>
-          <Banner />
-          <Navbar />
-          {children}
-          <Footer />
-          <WhatsappButton />
-        </ThemeProvider>
+        <AuthProvider>
+          < ThemeProvider >
+            <CartProvider>
+              <Banner />
+              <Navbar />
+              {children}
+              <Footer />
+              <WhatsappButton />
+            </CartProvider>
+            <Toaster position="top-right" richColors closeButton />
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   )

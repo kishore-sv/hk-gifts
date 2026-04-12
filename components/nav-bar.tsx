@@ -1,8 +1,9 @@
+"use client"
 import Link from "next/link";
 import Logo from "./logo";
 import { RainbowButton } from "./ui/rainbow-button";
 import { Button } from "./ui/button";
-import { Search, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import SearchButton from "./search-button";
 import CartButton from "./cart-button";
 import {
@@ -12,8 +13,14 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+    const router = useRouter();
+
+    function handleLogin() {
+        router.push("/login");
+    }
     return (
         <nav className="w-full sticky top-0 z-999 px-4 md:px-8 lg:px-40 flex items-center justify-between h-18 bg-background/50 border-b backdrop-blur-md">
             <div className="flex items-center gap-2">
@@ -31,7 +38,7 @@ export default function Navbar() {
                 <Link href="/contact" className="flex items-center gap-2"><Button variant="link" className="cursor-pointer text-foreground hover:text-primary">Contact</Button></Link>
                 <SearchButton />
                 <CartButton />
-                <RainbowButton variant="outline">Login</RainbowButton>
+                <RainbowButton onClick={handleLogin} variant="outline">Login</RainbowButton>
             </div>
 
             {/* Mobile Navigation */}
@@ -55,7 +62,7 @@ export default function Navbar() {
                             <Link href="/contact" className="text-lg font-medium hover:text-primary transition-colors">Contact</Link>
                         </div>
                         <div className="mt-auto mb-5">
-                            <RainbowButton variant="outline" className="w-full">Login</RainbowButton>
+                            <RainbowButton onClick={handleLogin} variant="outline" className="w-full">Login</RainbowButton>
                         </div>
                     </SheetContent>
                 </Sheet>

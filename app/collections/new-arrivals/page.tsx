@@ -1,8 +1,8 @@
 "use client"
-import { ProductCard, PRODUCTS } from "@/components/products-show-case"
+import { ProductCard } from "@/components/products-show-case"
 import { Button } from "@/components/ui/button"
+import { PRODUCTS } from "@/products/data"
 import { ArrowRight } from "lucide-react"
-import React from "react"
 
 export default function NewArrivalsPage() {
   return (
@@ -13,12 +13,12 @@ export default function NewArrivalsPage() {
         anniversaries, holidays, and more.
       </p>
       <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {PRODUCTS.map((product) => (
+        {PRODUCTS.filter((product) => product.tag === "new-arrivals").map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
       <div className="w-full flex justify-center items-center my-10">
-      <Button variant="secondary" className="cursor-pointer group">View All <ArrowRight className="size-4 group-hover:translate-x-1 transition-all ease-in-out"/> </Button>
+        <Button variant="secondary" className="cursor-pointer group">View All <ArrowRight className="size-4 group-hover:translate-x-1 transition-all ease-in-out" /> </Button>
       </div>
     </div>
   )

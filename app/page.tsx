@@ -23,7 +23,11 @@ export default function Page() {
       </section>
 
       <section className="mb-20 lg:mb-30">
-        <ProductsShowCase title="Trending Gifts" />
+        <ProductsShowCase title="Trending Gifts" tag="trending" />
+      </section>
+
+      <section className="mb-20 lg:mb-30">
+        <ProductsShowCase title="New Arrivals" tag="new-arrivals" />
       </section>
     </div>
   )
