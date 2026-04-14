@@ -7,7 +7,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-
 export const createSlug = (name: string) => {
   return slugify(name, {
     lower: true,
